@@ -14,7 +14,6 @@ fun main() {
             .start(wait = true)
 
 
-
 }
 
 fun Application.module() {
@@ -23,4 +22,5 @@ fun Application.module() {
     configureDatabases()
     configureRouting()
     DatabaseFactory.init()
+
 }
