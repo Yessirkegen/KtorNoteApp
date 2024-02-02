@@ -15,7 +15,7 @@ class repo{
         } }
     }
     suspend fun finduserByEmail(email:String)=DatabaseFactory.dbQuery {
-        val a=UserTable.select{UserTable.email.eq(email) }
+        UserTable.select{UserTable.email.eq(email) }
             .map {
                 rowtouser(it)
             }

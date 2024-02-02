@@ -7,6 +7,7 @@ import com.example.plugins.configureSerialization
 import com.example.repository.DatabaseFactory
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
+import io.ktor.server.locations.*
 import io.ktor.server.netty.*
 
 fun main() {
@@ -20,7 +21,9 @@ fun Application.module() {
     configureSecurity()
     configureSerialization()
     configureDatabases()
+
     configureRouting()
     DatabaseFactory.init()
+    install(Locations)
 
 }

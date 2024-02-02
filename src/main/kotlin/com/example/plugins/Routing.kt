@@ -13,11 +13,14 @@ fun Application.configureRouting() {
     val db = repo()
     val jwtService = JwtService()
     val hashFunction = { s:String -> hash(s) }
+//    install(Locations)
     routing {
         get("/") {
             call.respondText("Fuck you")
 
         }
+
+        UserRoutes(db,jwtService,hashFunction)
 
         get("/token") {
             val email = call.request.queryParameters["email"]!!
